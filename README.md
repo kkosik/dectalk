@@ -6,11 +6,11 @@ It has the *phoneme* mode enabled by default to allow for singing.
 
 ## Usage
 
-# Using the widget
+### Using the widget
 
 Visit https://dectalk.nitrix.me for the online widget.
 
-# Using the API endpoint
+### Using the API endpoint
 
 You can make HTTP requests to https://dectalk.nitrix.me/synthesize with your speech inside the body.
 
@@ -104,5 +104,4 @@ Call me maybe:
 
 ## License
 
-This is free and unencumbered software released into the public domain.
-For more information, please refer to [UNLICENSE](UNLICENSE).
+This is free and unencumbered software released into the public domain. See the [UNLICENSE](UNLICENSE) file for more details.
