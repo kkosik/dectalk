@@ -74,6 +74,8 @@ DECtalk requires that the stress symbol appear immediately before the vowel.
 | z		| z oo	    | zoo |
 | zh	| az ure    | azure |
 
+See [this document](docs/EpsonDECtalk501.pdf) for the complete documentation.
+
 ## Example songs
 
 Trololol:
