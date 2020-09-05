@@ -16,6 +16,64 @@ You can make HTTP requests to https://dectalk.nitrix.me/synthesize with your spe
 
 The HTTP response is raw <string>wav</string> audio.
 
+## Documentation
+
+The table below lists the phonemic alphabet that DecTalk uses, along with an example of each sound.
+
+DECtalk requires that the stress symbol appear immediately before the vowel.
+
+| Symbol | Word (showing phoneme) | Word (complete) |
+|-----|-----------|-----|
+| aa	| b ob	    | bob |
+| ae	| ba t	    | bat |
+| ah	| b ut	    | but |
+| ao	| bou ght	| bought |
+| aw	| bout	    | bout |
+| ax	| a bout	| about |
+| ay	| by te	    | byte |
+| b		| b ottle	| bottle |
+| ch	| ch in	    | chin |
+| d		| d ebt	    | debt |
+| dh	| th is	    | this |
+| dx	| rid er	| rider |
+| eh	| b et	    | bet |
+| el	| bottle	| bottle |
+| en	| button	| button |
+| ey	| ba ke	    | bake |
+| f		| f in	    | fin |
+| g		| guess	    | guess |
+| hx	| h ead	    | head |
+| ih	| b it      | bit |
+| ix	| kisses	| kisses |
+| iy	| bea t	    | beat |
+| jh	| g in	    | gin |
+| k		| Ken	    | Ken |
+| l		| l et	    | let |
+| lx	| el ectric	| electric |
+| m		| m et	    | met |
+| n		| n et	    | net |
+| nx	| sing	    | sing |
+| ow	| boa t	    | boat |
+| oy	| b oy	    | boy |
+| p		| p et	    | pet |
+| q		| we e at   | weeat |
+| r		| r ed	    | red |
+| rr	| b ird	    | bird |
+| rx	| or ation  | oration |
+| s		| s it	    | sit |
+| sh	| sh in	    | shin |
+| t		| t est	    | test |
+| th	| th in	    | thin |
+| tx	| Lat in    | Latin |
+| uh	| bo ok	    | book |
+| uw	| lu te	    | lute |
+| v		| v est	    | vest |
+| w		| w et	    | wet |
+| yu	| cu te	    | cute |
+| yx	| y et	    | yet |
+| z		| z oo	    | zoo |
+| zh	| az ure    | azure |
+
 ## Example songs
 
 Trololol:
