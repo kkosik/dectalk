@@ -63,7 +63,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 	}
 	cmd.Dir = "lib"
 	text := r.URL.Query().Get("text")
-	cmd.Stdin = text
+	cmd.Stdin = NewReader(text)
 
 	err := cmd.Run()
 	if err != nil {
