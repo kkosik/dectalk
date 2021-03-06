@@ -21,11 +21,11 @@ jobs:
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
       with:
-        args: set image --record deployment/dectalk container=${{ github.repository }}:${{ github.sha }}
+        args: set image --record deployment/dectalk --namespace nitrixme dectalk=${{ github.repository }}:${{ github.sha }}
     - name: Verifying
       uses: steebchen/kubectl@master
       env:
         KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         KUBECTL_VERSION: "1.15"
       with:
-        args: '"rollout status deployment/dectalk"'
+        args: '"rollout status deployment/dectalk --namespace nitrixme"'
