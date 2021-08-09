@@ -1,0 +1,32 @@
+on: push
+name: deploy
+jobs:
+  deploy:
+    name: Deploy to production
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout master
+      uses: actions/checkout@master
+    - name: Build container image
+      run: docker build -t ${{ github.repository }}:${{ github.sha }} .
+    - name: Login to Docker Hub
+      env:
+        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+    - name: Push image to Docker Hub
+      run: docker push ${{ github.repository }}:${{ github.sha }}
+    - name: Deploying
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+      with:
+        args: set image --record deployment/dectalk --namespace nitrixme dectalk=${{ github.repository }}:${{ github.sha }}
+    - name: Verifying
+      uses: steebchen/kubectl@master
+      env:
+        KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
+        KUBECTL_VERSION: "1.15"
+      with:
+        args: '"rollout status deployment/dectalk --namespace nitrixme"'
