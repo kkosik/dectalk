@@ -9,6 +9,8 @@ import (
 	"os/exec"
 	"time"
 	"strings"
+    	"io/ioutil"	
+    	"path"
 )
 
 func main() {
@@ -46,6 +48,13 @@ func runFakeDisplay() {
 }
 
 func synthesize(w http.ResponseWriter, r *http.Request) {
+
+	// Clear wavs directory
+	dir, err := ioutil.ReadDir("/opt/say/wavs")
+	for _, d := range dir {
+		os.RemoveAll(path.Join([]string{"tmp", d.Name()}...))
+	}
+	
 	timestamp := time.Now().Nanosecond()
 	filename := fmt.Sprintf("wavs/%d.wav", timestamp)
 
