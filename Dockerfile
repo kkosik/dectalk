@@ -10,6 +10,8 @@ USER root
 #RUN apt-get -o Acquire::Check-Valid-Until=false update
 #RUN apt-get install -y golang xvfb
 
+RUN add-apt-repository ppa:longsleep/golang-backports
+RUN apt-get update
 RUN apt-get install -y golang
 
 COPY . /opt/say
