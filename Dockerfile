@@ -10,7 +10,7 @@ USER root
 #RUN apt-get -o Acquire::Check-Valid-Until=false update
 #RUN apt-get install -y golang xvfb
 
-RUN apt-get install -y golang-1.10
+RUN apt-get install -y golang
 
 COPY . /opt/say
 RUN mkdir /opt/say/wavs && chmod 777 /opt/say/wavs
