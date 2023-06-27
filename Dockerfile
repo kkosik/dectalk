@@ -1,7 +1,7 @@
 FROM suchja/wine
 
 USER root
-RUN apt-get update && apt-get install -y xvfb
+RUN apt-get update && apt-get install -y golang xvfb
 
 COPY . /opt/say
 RUN mkdir /opt/say/wavs && chmod 777 /opt/say/wavs
