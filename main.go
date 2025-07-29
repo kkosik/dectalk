@@ -32,7 +32,7 @@ func runFakeDisplay() {
 	log.Println("Running Xvfb...")
 
 	args := []string {
-		":1",
+		":99",
 		"-screen",
 		"0",
 		"800x600x24",
@@ -56,7 +56,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	timestamp := time.Now().Nanosecond()
-	filename := fmt.Sprintf("/opt/say/wavs/%d.wav", timestamp)
+	filename := fmt.Sprintf("wavs/%d.wav", timestamp)
 
 	args := []string{
 		"say.exe",
@@ -68,7 +68,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 
 	cmd := exec.Command("wine", args...)
 	cmd.Env = []string{
-		"DISPLAY=:1",
+		"DISPLAY=:99",
 	}
 	cmd.Dir = "lib"
 	text := r.URL.Query().Get("text")
