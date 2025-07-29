@@ -52,7 +52,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 	// Clear wavs directory
 	dir, err := ioutil.ReadDir("/opt/say/wavs")
 	for _, d := range dir {
-		os.RemoveAll(path.Join([]string{"tmp", d.Name()}...))
+	    os.RemoveAll(path.Join("/opt/say/wavs", d.Name()))
 	}
 	
 	timestamp := time.Now().Nanosecond()
@@ -74,7 +74,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 	text := r.URL.Query().Get("text")
 	cmd.Stdin = strings.NewReader(text)
 
-	err := cmd.Run()
+	err = cmd.Run()
 	if err != nil {
 		log.Println(err)
 		w.WriteHeader(500)
