@@ -17,8 +17,10 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
         DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
       run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-    - name: Push image to Docker Hub
+    - name: Push image to Docker Hub (sha tag)
       run: docker push ${{ github.repository }}:${{ github.sha }}
+    - name: Push image to Docker Hub (latest tag)
+      run: docker push ${{ github.repository }}:latest
     - name: Deploying
       uses: steebchen/kubectl@master
       env:
