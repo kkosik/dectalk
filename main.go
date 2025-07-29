@@ -14,7 +14,6 @@ import (
 )
 
 func main() {
-	//go runFakeDisplay()
 
 	mux := http.NewServeMux()
 
@@ -26,25 +25,6 @@ func main() {
 	if err != nil {
 		log.Fatalln(err)
 	}
-}
-
-func runFakeDisplay() {
-	log.Println("Running Xvfb...")
-
-	args := []string {
-		":99",
-		"-screen",
-		"0",
-		"800x600x24",
-	}
-
-	cmd := exec.Command("Xvfb", args...)
-	err := cmd.Run()
-	if err != nil {
-		log.Fatalln(err)
-	}
-
-	log.Println("Xvfb terminated")
 }
 
 func synthesize(w http.ResponseWriter, r *http.Request) {
