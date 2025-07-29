@@ -1,4 +1,4 @@
-FROM suchja/wine:latest
+FROM suchja/wine
 
 USER root
 
