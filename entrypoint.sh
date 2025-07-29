@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Clean up old Xvfb lock files if they exist
+if [ -e /tmp/.X99-lock ]; then
+  echo "Removing stale Xvfb lock file..."
+  rm -f /tmp/.X99-lock
+fi
+
 # Set up environment
 export DISPLAY=:99
 XAUTHORITY=/home/xclient/.Xauthority
