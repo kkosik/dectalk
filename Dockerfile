@@ -13,7 +13,7 @@ USER root
 #RUN add-apt-repository ppa:longsleep/golang-backports
 #RUN apt-get update
 #RUN apt-get update && apt-get install -y xvfb
-#RUN apt-get install -y golang
+RUN apt-get install -y golang
 
 COPY . /opt/say
 RUN mkdir /opt/say/wavs && chmod 777 /opt/say/wavs
