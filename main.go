@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	go runFakeDisplay()
+	//go runFakeDisplay()
 
 	mux := http.NewServeMux()
 
