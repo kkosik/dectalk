@@ -56,7 +56,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 	}
 	
 	timestamp := time.Now().Nanosecond()
-	filename := fmt.Sprintf("wavs/%d.wav", timestamp)
+	filename := fmt.Sprintf("/opt/say/wavs/%d.wav", timestamp)
 
 	args := []string{
 		"say.exe",
