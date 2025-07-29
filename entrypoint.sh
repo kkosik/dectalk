@@ -7,7 +7,7 @@ echo "Removing stale Xvfb lock file if it exists..." >&2
 rm -f /tmp/.X99-lock
 
 echo "Starting Xvfb on display :99..." >&2
-Xvfb :99 -screen 0 1024x768x16 &
+Xvfb :99 -screen 0 800x600x24 &
 
 export DISPLAY=:99
 
