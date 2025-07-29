@@ -14,8 +14,9 @@ import (
 )
 
 func main() {
-
-	log.Println("DISPLAY:", os.Getenv("DISPLAY"))
+	
+	// Check display
+	//log.Println("DISPLAY:", os.Getenv("DISPLAY"))
 	
 	mux := http.NewServeMux()
 
