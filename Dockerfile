@@ -11,7 +11,8 @@ USER root
 #RUN apt-get install -y golang xvfb
 
 #RUN add-apt-repository ppa:longsleep/golang-backports
-RUN apt-get update
+#RUN apt-get update
+RUN apt-get update && apt-get install -y xvfb
 #RUN apt-get install -y golang
 
 COPY . /opt/say
@@ -24,4 +25,5 @@ WORKDIR /opt/say
 
 RUN go build
 
-CMD /opt/say/say
+#CMD /opt/say/say
+CMD ["xvfb-run", "/opt/say/say"]
