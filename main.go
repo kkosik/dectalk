@@ -15,6 +15,8 @@ import (
 
 func main() {
 
+	log.Println("DISPLAY:", os.Getenv("DISPLAY"))
+	
 	mux := http.NewServeMux()
 
 	fs := http.FileServer(http.Dir("./html"))
