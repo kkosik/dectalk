@@ -48,7 +48,7 @@ func synthesize(w http.ResponseWriter, r *http.Request) {
 
 	cmd := exec.Command("wine", args...)
 	cmd.Env = []string{
-		"DISPLAY=:99",
+		"DISPLAY=:1",
 	}
 	cmd.Dir = "lib"
 	text := r.URL.Query().Get("text")
