@@ -1,4 +1,4 @@
-FROM suchja/wine
+FROM suchja/wine:bullseye
 
 USER root
 RUN apt-get update && apt-get install -y golang Xvfb
